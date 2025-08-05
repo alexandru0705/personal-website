@@ -1,38 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alex – Musician & Painter</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="fontawesome-all.min.css" />
+  <noscript><link rel="stylesheet" href="noscript.css" /></noscript>
 </head>
 <body>
-
-  <header>
+  <!-- Header -->
+  <header id="header">
     <h1>Alex – Musician & Painter</h1>
-    <p>Passion et boulot dans un seul endroit</p>
-    <nav>
-      <a href="https://soundcloud.com/chambre-quarante-six" target="_blank">SoundCloud</a> |
-      <a href="https://www.facebook.com/lachambre46" target="_blank">Facebook</a>
-    </nav>
+    <p>Passion et boulot dans un seul endroit<br />
+    <a href="https://soundcloud.com/chambre-quarante-six" target="_blank">SoundCloud</a> | 
+    <a href="https://www.facebook.com/lachambre46" target="_blank">Facebook</a></p>
   </header>
 
-  <main class="gallery">
-    <section>
-      <img src="images/ME.JPG" alt="Painting by Alex">
-      <h2>Painting</h2>
-      <p>Each brushstroke is a whisper from the soul — emotion translated into color and texture.</p>
-    </section>
+  <!-- Music Section -->
+  <section id="music" class="main special">
+    <header class="major">
+      <h2>My Music</h2>
+      <p>Exploring rhythms, textures, and tones to create immersive sonic landscapes.</p>
+    </header>
+    <ul class="features">
+      <li>
+        <img src="images/music.jpg" alt="Live performance" class="art-img" />
+        <h3>Live Setup</h3>
+        <p>Where machines and mood collide in rhythm.</p>
+      </li>
+    </ul>
+  </section>
 
-    <section>
-      <img src="images/music.jpg" alt="Live performance by Alex">
-      <h2>Music</h2>
-      <p>Loops, synths, and textures – building sonic stories from silence, one groove at a time.</p>
-    </section>
-  </main>
+  <!-- Painting Section -->
+  <section id="painting" class="main special">
+    <header class="major">
+      <h2>My Painting</h2>
+      <p>Visual poetry through bold strokes and delicate lines — my canvas speaks without words.</p>
+    </header>
+    <ul class="features">
+      <li>
+        <img src="images/ME.JPG" alt="Artwork 1" class="art-img" />
+        <h3>Artwork 1</h3>
+        <p>Painting meets emotion, brushstroke after brushstroke.</p>
+      </li>
+      <li>
+        <img src="images/music.jpg" alt="Artwork 2" class="art-img" />
+        <h3>Artwork 2</h3>
+        <p>Sounds loop and twist like lines on a canvas.</p>
+      </li>
+    </ul>
+  </section>
 
-  <footer>
+  <!-- Footer -->
+  <footer id="footer">
     <p>© 2025 Alex – chambre-quarante-six</p>
   </footer>
 
+  <!-- Scripts -->
+  <script src="jquery.min.js"></script>
+  <script src="browser.min.js"></script>
+  <script src="breakpoints.min.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
