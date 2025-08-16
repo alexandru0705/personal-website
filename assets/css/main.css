@@ -325,3 +325,55 @@ ul.contact-icons li.icon.brands:before{
   flex-direction:column;
   gap: 1.25rem;          /* even spacing between rows */
 }
+/* === ICONS: Circular buttons === */
+.circle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d16ba5, #86a8e7, #5ffbf1); /* same gradient style */
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.circle-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  color: #fff;
+}
+
+/* === ICONS: Contact list (smaller, aligned left with labels) === */
+.contact-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-icons li {
+  margin: 0.75rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.contact-icons a {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact-icons i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-right: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d16ba5, #86a8e7, #5ffbf1);
+  font-size: 16px;
+}
