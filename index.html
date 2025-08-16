@@ -1,89 +1,142 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Alex 🎨 Musician, Painter & Coder</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Alex — Musician, Painter & Coder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Local styles -->
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- Fallback for no-JS users (optional) -->
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   </head>
-  <body class="is-preload">
 
-    <!-- Page Wrapper -->
+  <body>
     <div id="page-wrapper">
-
-      <!-- Wrapper -->
       <div id="wrapper">
 
-        <!-- ================= Banner ================= -->
-        <section class="panel banner right">
-          <div class="content color0 span-3-75">
-            <h1 class="major">Alex 🎨<br />Musician, Painter &amp; Coder</h1>
-            <p>Passion et boulot dans un seul endroit.</p>
-            <ul class="actions">
-              <li><a href="https://soundcloud.com/chambre-quarante-six" target="_blank" class="button primary color1 circle"><i class="fab fa-soundcloud"></i></a></li>
-              <li><a href="https://www.facebook.com/lachambre46" target="_blank" class="button primary color1 circle"><i class="fab fa-facebook-f"></i></a></li>
+        <!-- ========== 1) HERO / TITLE BLOCK ========== -->
+        <section class="panel banner" id="hero">
+          <div class="content">
+            <h1 class="title">Musician, Painter &amp; Coder</h1>
+            <p class="tagline">Passion et boulot dans un seul endroit.</p>
+
+            <ul class="social hero-icons">
+              <li>
+                <a class="icon circle" href="https://soundcloud.com/chambre-quarante-six" target="_blank" aria-label="SoundCloud">
+                  <i class="fab fa-soundcloud" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a class="icon circle" href="https://www.facebook.com/lachambre46" target="_blank" aria-label="Facebook">
+                  <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                </a>
+              </li>
             </ul>
           </div>
-          <div class="image span-1-75">
-            <img src="images/Alex.jpg" alt="Alex photo" />
+
+          <!-- Portrait (right side of hero) -->
+          <div class="image">
+            <img src="images/Alex.jpg" alt="Alex portrait" />
           </div>
         </section>
 
-        <!-- ================= Music ================= -->
-        <section class="panel spotlight medium left">
-          <div class="content span-7">
+        <!-- ========== 2) MUSIC BLOCK ========== -->
+        <section class="panel spotlight" id="music">
+          <div class="content">
             <h2 class="major">My Music</h2>
-            <p>Exploring sounds, textures, and rhythms. From electronic to jazz, creating unique musical journeys.</p>
+            <p>
+              Exploring rhythms, textures, and tones to create immersive sonic landscapes.
+              Where machines and mood collide in rhythm.
+            </p>
           </div>
-          <div class="image filtered tinted" data-position="top left">
-            <img src="images/music.jpg" alt="Alex in studio" />
+
+          <div class="image">
+            <img src="images/music.jpg" alt="Live performance" />
           </div>
         </section>
 
-        <!-- ================= Coding ================= -->
-        <section class="panel spotlight medium right">
-          <div class="content span-7">
-            <h2 class="major">My Coding</h2>
-            <p>Turning logic into creativity. Building tools, sites, and apps where imagination meets function.</p>
+        <!-- ========== 3) PAINTING BLOCK ========== -->
+        <section class="panel spotlight invert" id="painting">
+          <div class="image">
+            <!-- NOTE: your file is named painting.JPG (uppercase extension) -->
+            <img src="images/painting.JPG" alt="Painting artwork" />
           </div>
-          <div class="image filtered tinted" data-position="top right">
-            <img src="images/pic01.jpg" alt="Coding illustration" />
-          </div>
-        </section>
 
-        <!-- ================= Painting ================= -->
-        <section class="panel spotlight large left">
-          <div class="content span-5">
+          <div class="content">
             <h2 class="major">My Painting</h2>
-            <p>Colors, shapes, and emotions on canvas. Every piece tells a part of my story.</p>
-          </div>
-          <div class="image filtered tinted" data-position="top right">
-            <img src="images/painting.JPG" alt="Painting example" />
+            <p>
+              Color, composition, and expression. A visual path where silence becomes story
+              and brush meets thought.
+            </p>
           </div>
         </section>
 
-        <!-- ================= Contact ================= -->
-        <section class="panel color2-alt">
-          <div class="intro color2">
-            <h2 class="major">Contact</h2>
-            <p>Let’s connect! Music, painting, coding or just good vibes.</p>
+        <!-- ========== 4) CODING BLOCK ========== -->
+        <section class="panel spotlight" id="coding">
+          <div class="content">
+            <h2 class="major">My Coding</h2>
+            <p>
+              Turning logic into creativity. Building tools, sites, and apps where imagination meets function.
+            </p>
+
+            <a href="#" class="button ghost">View Projects</a>
           </div>
-          <div class="inner columns divided">
-            <div class="span-3">
-              <ul class="contact-icons color1">
-                <li class="icon brands fa-facebook-f"><a href="https://www.facebook.com/lachambre46" target="_blank">Facebook</a></li>
-                <li class="icon brands fa-soundcloud"><a href="https://soundcloud.com/chambre-quarante-six" target="_blank">SoundCloud</a></li>
-                <li class="icon brands fa-instagram"><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
-                <li class="icon brands fa-github"><a href="https://github.com" target="_blank">GitHub</a></li>
-              </ul>
-            </div>
+
+          <div class="image">
+            <!-- Optional decorative image; change if you prefer another -->
+            <img src="images/bg.jpg" alt="Coding project" />
+          </div>
+        </section>
+
+        <!-- ========== 5) CONTACT BLOCK ========== -->
+        <section class="panel contact" id="contact">
+          <div class="content">
+            <h2 class="major">Contact</h2>
+
+            <ul class="contact-list">
+              <li>
+                <a href="https://soundcloud.com/chambre-quarante-six" target="_blank">
+                  <span class="contact-icon"><i class="fab fa-soundcloud" aria-hidden="true"></i></span>
+                  SoundCloud
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/lachambre46" target="_blank">
+                  <span class="contact-icon"><i class="fab fa-facebook-f" aria-hidden="true"></i></span>
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a href="mailto:alexandru0705@gmail.com">
+                  <span class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+                  alexandru0705@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="tel:+33659794786">
+                  <span class="contact-icon"><i class="fas fa-phone" aria-hidden="true"></i></span>
+                  06 59 79 47 86
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="image">
+            <img src="images/pic02.jpg" alt="Gradient backdrop" />
           </div>
         </section>
 
       </div>
     </div>
 
+    <!-- Scripts (if you’re using HTML5 UP base JS; otherwise safe to remove) -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
