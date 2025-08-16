@@ -1,0 +1,140 @@
+/* ------------------------------------------------------------ */
+/* ETHEREAL TEMPLATE – customized for Alex 🎨                   */
+/* Soft-dark dusk palette: not harsh black, not bright white    */
+/* ------------------------------------------------------------ */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #1e202b;
+  color: #f2f2f2;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+a {
+  color: #836fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #9a8dfc;
+}
+
+/* Wrapper */
+#wrapper {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Panel basics */
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4em 2em;
+  min-height: 100vh;
+  background: radial-gradient(1200px 800px at 20% -10%, #2f3245 0%, #1e202b 100%);
+  color: #f2f2f2;
+  position: relative;
+}
+
+/* Panel variations */
+.panel.banner {
+  background: linear-gradient(135deg, #2f3245, #1e202b);
+}
+
+.panel.spotlight {
+  background: radial-gradient(1000px 600px at 30% -5%, #2d3144 0%, #1e202b 100%);
+}
+
+.panel.color4-alt {
+  background: #242632;
+  color: #e0e0e0;
+}
+
+/* Panel content */
+.panel .content {
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2em;
+  border-radius: 12px;
+}
+
+.panel .image {
+  flex: 1;
+  max-width: 500px;
+  margin-left: 2em;
+}
+
+.panel .image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Headings */
+h1.major, h2.major {
+  font-weight: 700;
+  color: #e0e0e0;
+  margin: 0 0 1em 0;
+  text-shadow: 0px 1px 3px rgba(0,0,0,0.6);
+}
+
+/* Buttons */
+a.button.primary {
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  background: linear-gradient(135deg, #6a5acd, #836fff);
+  color: #fff !important;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+a.button.primary:hover {
+  background: linear-gradient(135deg, #7b68ee, #9a8dfc);
+}
+
+/* Contact icons */
+ul.contact-icons {
+  list-style: none;
+  padding: 0;
+}
+
+ul.contact-icons li {
+  margin: 0.5em 0;
+}
+
+ul.contact-icons a {
+  color: #9a8dfc;
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 980px) {
+  .panel {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .panel .image {
+    margin: 2em 0 0 0;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  body {
+    font-size: 14px;
+  }
+
+  .panel {
+    padding: 2em 1em;
+  }
+}git add assets/css/main.css
+git commit -m "Updated full CSS with soft dark theme"
+git push
+git add index.html
+git commit -m "Updated HTML blocks and CSS soft dark theme"
+git push
+
