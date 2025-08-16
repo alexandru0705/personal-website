@@ -183,3 +183,8 @@ h2.major {
 }
 .panel a.pill:hover { border-bottom: none !important; }
 .panel a.pill i { color: var(--pill-fg); }
+/* --- Pill text fix (override generic .panel a) --- */
+.panel a.pill { color: var(--pill-fg) !important; border-bottom: none !important; }
+.panel a.pill:hover { border-bottom: none !important; }
+.panel a.pill i { color: var(--pill-fg); }
+.hero-icons .pill span { display: inline; white-space: nowrap; }
