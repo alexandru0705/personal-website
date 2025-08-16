@@ -22,3 +22,4 @@
   flex-direction: column;
   justify-content: center;
 }
+.image.fit img { border-radius: 12px; }
