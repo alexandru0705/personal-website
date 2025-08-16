@@ -1,140 +1,133 @@
-<!DOCTYPE HTML>
-<!--
-  Alex — personal site
-  Layout: hero + 3 panels (Music, Painting, Coder) + Contact
-  Uses the Ethereal-style panels and your existing CSS
--->
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Alex — Musician, Painter and Coder</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description" content="Alex — Musician, Painter and Coder. Passion et boulot dans un seul endroit." />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alex — Musician, Painter & Coder</title>
 
-    <!-- Icons & fonts already in your project -->
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-    <!-- Main site styles (the CSS you’re editing) -->
-    <link rel="stylesheet" href="assets/css/main.css" />
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  </head>
-  <body class="is-preload">
-    <!-- Page Wrapper -->
-    <div id="page-wrapper">
-      <!-- Wrapper -->
-      <div id="wrapper">
+  <!-- Main styles -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <meta name="description" content="Alex — Musician, Painter & Coder. Passion et boulot dans un seul endroit." />
+</head>
+<body>
+  <div id="page-wrapper">
+    <div id="wrapper">
 
-        <!-- ========== 1) HERO ========== -->
-        <section class="panel banner hero">
-          <div class="content">
-            <h1 class="major">
-              Alex 🎨<br />
-              Musician, Painter and Coder
-            </h1>
-            <p>Passion et boulot dans un seul endroit.</p>
+      <!-- 1) HERO -->
+      <section class="panel banner hero color1-alt">
+        <div class="content">
+          <h1 class="major">
+            Alex 🎨<br />
+            Musician, Painter &amp; Coder
+          </h1>
+          <p>Passion et boulot dans un seul endroit.</p>
 
-            <ul class="actions hero-icons">
-              <li>
-                <a class="icon brands fa-soundcloud" href="https://soundcloud.com/chambre-quarante-six" target="_blank" rel="noopener">
-                  <span class="label">SoundCloud</span>
-                </a>
-              </li>
-              <li>
-                <a class="icon brands fa-facebook-f" href="https://www.facebook.com/lachambre46" target="_blank" rel="noopener">
-                  <span class="label">Facebook</span>
-                </a>
-              </li>
-            </ul>
-          </div>
+          <ul class="actions hero-icons">
+            <li>
+              <a class="pill" href="https://soundcloud.com/" target="_blank" rel="noopener">
+                <i class="fab fa-soundcloud"></i>
+                <span>SoundCloud</span>
+              </a>
+            </li>
+            <li>
+              <a class="pill" href="https://facebook.com/" target="_blank" rel="noopener">
+                <i class="fab fa-facebook-f"></i>
+                <span>Facebook</span>
+              </a>
+            </li>
+          </ul>
+        </div>
 
-          <div class="image">
-            <!-- You said the hero artwork file is hero.JPG -->
-            <img src="images/hero.JPG" alt="Hero artwork" />
-          </div>
-        </section>
+        <div class="image">
+          <img src="images/hero.JPG" alt="Hero artwork" />
+        </div>
+      </section>
 
-        <!-- ========== 2) MUSIC ========== -->
-        <section class="panel spotlight right color1-alt">
-          <div class="content">
-            <h2 class="major">My Music</h2>
-            <p>Exploring rhythms, textures, and tones to create immersive sonic landscapes. Where machines and mood collide in rhythm.</p>
-          </div>
-          <div class="image filtered tinted">
-            <img src="images/music.jpg" alt="Live performance" />
-          </div>
-        </section>
+      <!-- 2) MUSIC -->
+      <section class="panel color2-alt">
+        <div class="content">
+          <h2 class="major">My Music</h2>
+          <p>
+            Exploring rhythms, textures, and tones to create immersive sonic landscapes.
+            Where machines and mood collide in rhythm.
+          </p>
+        </div>
+        <div class="image">
+          <img src="images/music.jpg" alt="Live performance" />
+        </div>
+      </section>
 
-        <!-- ========== 3) PAINTING ========== -->
-        <section class="panel spotlight left color2-alt">
-          <div class="content">
-            <h2 class="major">My Painting</h2>
-            <p>Color, composition, and expression. A visual path where silence becomes story and brush meets thought.</p>
-          </div>
-          <div class="image filtered tinted">
-            <!-- You told me the painting file is painting.JPG -->
-            <img src="images/painting.JPG" alt="Painting artwork" />
-          </div>
-        </section>
+      <!-- 3) PAINTING -->
+      <section class="panel color3-alt">
+        <div class="content">
+          <h2 class="major">My Painting</h2>
+          <p>
+            Color, movement, and form—expressed with layered strokes and subtle contrasts.
+            A tactile search for balance and light.
+          </p>
+        </div>
+        <div class="image">
+          <img src="images/painting.JPG" alt="Painting by Alex" />
+        </div>
+      </section>
 
-        <!-- ========== 4) CODER ========== -->
-        <section class="panel spotlight right color3-alt">
-          <div class="content">
-            <h2 class="major">My Coding</h2>
-            <p>From tracker apps to creative tools, I build small, focused projects where usability meets play. More coming soon.</p>
-            <ul class="actions">
-              <li><a href="#" class="button primary">View projects</a></li>
-            </ul>
-          </div>
-          <div class="image filtered tinted">
-            <img src="images/pic02.jpg" alt="Coding project visual" />
-          </div>
-        </section>
+      <!-- 4) CODING -->
+      <section class="panel color2b-alt">
+        <div class="content">
+          <h2 class="major">My Coding</h2>
+          <p>
+            From tracker apps to creative tools, I build small, focused projects where usability meets play.
+            More coming soon.
+          </p>
+          <a class="button" href="#" aria-label="View projects">View projects</a>
+        </div>
+        <div class="image">
+          <img src="images/bg.jpg" alt="Code-inspired gradient" />
+        </div>
+      </section>
 
-        <!-- ========== 5) CONTACT ========== -->
-        <section class="panel color4-alt" id="contact">
-          <div class="inner columns divided">
-            <div class="span-3-25">
-              <h2 class="major">Contact</h2>
+      <!-- 5) CONTACT -->
+      <section class="panel color4-alt">
+        <div class="content">
+          <h2 class="major">Contact</h2>
 
-              <ul class="contact-icons">
-                <li>
-                  <a class="icon brands fa-soundcloud" href="https://soundcloud.com/chambre-quarante-six" target="_blank" rel="noopener">
-                    <span class="label">SoundCloud</span>
-                  </a>
-                </li>
-                <li>
-                  <a class="icon brands fa-facebook-f" href="https://www.facebook.com/lachambre46" target="_blank" rel="noopener">
-                    <span class="label">Facebook</span>
-                  </a>
-                </li>
-                <li>
-                  <a class="icon solid fa-envelope" href="mailto:alexandru0705@gmail.com">
-                    <span class="label">alexandru0705@gmail.com</span>
-                  </a>
-                </li>
-                <li>
-                  <a class="icon solid fa-phone" href="tel:+33659794786">
-                    <span class="label">06 59 79 47 86</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
+          <ul class="contact-list">
+            <li>
+              <a href="https://soundcloud.com/" target="_blank" rel="noopener">
+                <i class="fab fa-soundcloud"></i> SoundCloud
+              </a>
+            </li>
+            <li>
+              <a href="https://facebook.com/" target="_blank" rel="noopener">
+                <i class="fab fa-facebook-f"></i> Facebook
+              </a>
+            </li>
+            <li>
+              <a href="mailto:alexandru0705@gmail.com">
+                <i class="far fa-envelope"></i> alexandru0705@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="tel:+33659794786">
+                <i class="fas fa-phone"></i> 06 59 79 47 86
+              </a>
+            </li>
+          </ul>
+        </div>
 
-            <div class="span-1-5 image">
-              <!-- You asked to place your portrait here -->
-              <img src="images/Alex.jpg" alt="Alex portrait" />
-            </div>
-          </div>
-        </section>
+        <div class="image image-portrait">
+          <img src="images/Alex.jpg" alt="Alex portrait" />
+        </div>
+      </section>
 
-      </div><!-- /#wrapper -->
-    </div><!-- /#page-wrapper -->
+      <footer class="panel footer color4b-alt">
+        <p>© Alex — Musician, Painter & Coder</p>
+      </footer>
 
-    <!-- Scripts (from your template/project) -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
+    </div>
+  </div>
+</body>
 </html>
