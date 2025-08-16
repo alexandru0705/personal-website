@@ -1,379 +1,72 @@
-/* -----------------------------------------------------------
-   Ethereal-ish theme (compact), with visibility/contrast fixes
-   for hero links and Contact block spacing.
-   Replace your entire assets/css/main.css with this file.
------------------------------------------------------------ */
-
-/* ------------ Variables (colors, spacing) -------------- */
-:root{
-  --bg: #e1e6e1;
-  --paper-shadow: 0 2rem 4rem 0.25rem rgba(46,43,55,.20);
-  --ink: rgba(46,43,55,.92);
-  --ink-soft: rgba(46,43,55,.75);
-  --ink-dim: rgba(46,43,55,.55);
-
-  --white: #fff;
-  --brand-1: #726193;   /* violet */
-  --brand-2: #e37b7c;   /* coral */
-  --brand-3: #ffe4b4;   /* cream */
-  --brand-4: #353865;   /* deep indigo */
-
-  --panel-grad: linear-gradient(45deg, rgba(114,97,147,.85) 20%, rgba(227,123,124,.85) 60%, rgba(255,228,180,.85));
-  --panel-overlay: url("../images/overlay.png");
-  --radius: 12px;
-  --gap: 2.25rem;
+/* === Contact icons: clean circular buttons, NO inner square === */
+.contact-icons,
+.contact-icons ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 0;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
-/* ---------------- Base / Reset (light) ----------------- */
-*{box-sizing:border-box}
-html,body{height:100%}
-html{font-size:16px}
-@media (max-width:1280px){html{font-size:15px}}
-@media (max-width:736px){html{font-size:14px}}
-body{
-  margin:0;
-  background: var(--bg);
-  color: var(--ink-soft);
-  font: 300 1rem/1.65 "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-}
+.contact-icons li { margin: 0; padding: 0; }
 
-/* links */
-a{color:inherit;text-decoration:none;border-bottom:1px dotted rgba(46,43,55,.3);transition:color .2s,border-color .2s}
-a:hover{color:var(--brand-3);border-color:transparent}
-
-/* Headings */
-h1,h2,h3,h4{
-  margin:0 0 .75rem 0;
-  color: rgba(46,43,55,.95);
-  line-height:1.25;
-  letter-spacing:-.02em;
-  font-weight:700;
-  font-family: Arial, Helvetica, sans-serif;
-}
-h1{font-size:2.8rem}
-h2{font-size:1.75rem}
-h3{font-size:1.25rem}
-
-/* hr */
-hr{border:0;border-bottom:2px solid rgba(46,43,55,.15);margin:1.75rem 0}
-
-/* --------------- Page wrapper / card ------------------- */
-#page-wrapper{
-  min-height:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:6vh;
-}
-#wrapper{
-  display:flex;
-  height:32rem;
-  max-width:120rem;
-  width:100%;
-  box-shadow: var(--paper-shadow);
-  overflow:hidden;
-  position:relative;
-}
-@media (max-width:736px){
-  #page-wrapper{padding:1rem}
-  #wrapper{flex-direction:column;height:auto;box-shadow:0 .25rem 1.5rem .25rem rgba(46,43,55,.18)}
-}
-
-/* ----------------- Panels (horizontal) ----------------- */
-.panel{
-  position:relative;
-  display:flex;
-  flex: 0 0 40rem;     /* each panel width; adjust per layout */
-  align-items:stretch;
-  background: var(--brand-4);
-  color: rgba(255,255,255,.85);
-}
-.panel + .panel{border-left:2px solid rgba(255,255,255,.06)}
-/* overlay/texture + soft tint */
-.panel:before{
-  content:"";
-  position:absolute;inset:0;
-  background-image: var(--panel-overlay), var(--panel-grad);
-  background-size:128px 128px, auto;
-  opacity:.9;
-  pointer-events:none;
-}
-.panel > *{position:relative;z-index:1}
-
-/* -- Banner (hero) with left image / right content -- */
-.panel.banner{flex: 0 0 55rem}
-.panel.banner .image{
-  flex:1 1 50%;
-  position:relative;
-  min-height:22rem;
-}
-.panel.banner .image img{
-  position:absolute;inset:0;
-  width:100%;height:100%;object-fit:cover;
-}
-.panel.banner .content{
-  flex:1 1 50%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:1rem;
-  padding:3rem;
-}
-
-/* Make hero text very readable */
-.panel.banner .content h1,
-.panel.banner .content p{color:#fff}
-.panel.banner .content p{opacity:.9}
-
-/* Hero actions: circular icon buttons (SoundCloud / Facebook) */
-ul.actions{display:flex;gap:.75rem;padding:0;margin:0;list-style:none}
-.button{
-  display:inline-flex;align-items:center;justify-content:center;
-  height:3.25rem; padding:0 1.25rem;
-  border-radius:999px;
-  border:2px solid rgba(255,255,255,.5);
-  color:#fff; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
-  box-shadow: inset 0 0 0 2px rgba(255,255,255,.25);
-  transition:transform .2s, box-shadow .2s, background-color .2s, color .2s, border-color .2s;
-}
-.button:hover{box-shadow: inset 0 0 0 2px var(--brand-3); color:var(--brand-3)}
-
-/* circle variant for icon-only style */
-.button.circle{
-  width:3.25rem; padding:0; text-indent:3.25rem; overflow:hidden;
-  position:relative; border-color:transparent; box-shadow:none; background:#fff; color:var(--brand-4);
-}
-.button.circle:before{
-  content:""; position:absolute; inset:0; text-indent:0;
-}
-.button.circle.icon{font-weight:900}
-
-/* Font Awesome pseudo, keep visible on gradients */
-.button.icon.circle:before{
-  content: "\f1be"; /* default glyph; overridden below via class */
-  font-family:"Font Awesome 5 Free"; font-weight:900;
-  display:flex; align-items:center; justify-content:center;
-  font-size:1.25rem;
-}
-.button.icon.circle.brands:before{
-  font-family:"Font Awesome 5 Brands"; font-weight:400;
-}
-
-/* Specific brand glyphs when using e.g. class="button icon circle brands fa-soundcloud" */
-.button.fa-soundcloud.circle.brands:before{content:"\f1be"} /* SoundCloud */
-.button.fa-facebook.circle.brands:before{content:"\f39e"}
-
-/* tiny tweak so the two hero icon buttons read well on any photo */
-.panel.banner .content .button.circle{
-  background:#fff; color:var(--brand-4);
-  box-shadow:0 .25rem .75rem rgba(0,0,0,.18);
-}
-.panel.banner .content .button.circle:hover{
-  transform:translateY(-2px);
-}
-
-/* ---------------- Spotlight blocks (image bg) ----------- */
-.panel.spotlight{
-  flex: 0 0 35rem;
-  align-items:center;
-  justify-content:flex-start;
-  background: transparent;
-  color:#fff;
-}
-.panel.spotlight .image{
-  position:absolute; inset:0; z-index:0;
-}
-.panel.spotlight .image img{
-  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
-  filter: brightness(.8) saturate(1.05);
-}
-.panel.spotlight .content{
-  position:relative; z-index:1;
-  width:60%;
-  margin-left:2rem;
-  padding:2rem 0;
-}
-.panel.spotlight .content h2{color:#fff}
-.panel.spotlight .content p{opacity:.95}
-
-/* ---------------- Contact (better contrast + spacing) --- */
-.panel.contact{
-  flex: 0 0 55rem;
-  background: var(--brand-4);
-  color: rgba(255,255,255,.92);
-}
-.panel.contact:before{opacity:.85}
-.panel.contact .columns{
-  display:flex; gap:0; width:100%;
-}
-.panel.contact .left{
-  flex:1 1 50%;
-  min-height:22rem;
-  padding:3rem 2rem;
-  display:flex; align-items:center; color:rgba(255,255,255,.82);
-}
-.panel.contact .right{
-  flex:1 1 50%;
-  padding:3rem 2.5rem;
-  display:flex; flex-direction:column;
-}
-.panel.contact h2{color:#fff; margin-bottom:.5rem}
-
-/* Nice, bright, evenly spaced contact list */
-ul.contact-icons{
-  list-style:none; margin:0; padding:0;
-  flex:1 1 auto;
-  display:flex; flex-direction:column; justify-content:space-evenly;
-}
-ul.contact-icons li{
-  display:flex; align-items:center; gap:.9rem;
-  color: #f6f7fb;         /* LIGHTER = more contrast */
-}
-ul.contact-icons li a{
-  color:#f6f7fb; border-bottom-color:rgba(255,255,255,.35);
-}
-ul.contact-icons li a:hover{
-  color: var(--brand-3);
-}
-
-/* circular white icon bullets (FA) */
-ul.contact-icons li:before{
-  content:"\f0e0";  /* default envelope; per-item classes may override visually via <i>, but this keeps a circle */
-  font-family:"Font Awesome 5 Free"; font-weight:900;
-  display:inline-flex; align-items:center; justify-content:center;
-  width:2.25rem; height:2.25rem; border-radius:999px;
-  background:#fff; color:var(--brand-4);
-  box-shadow:0 .35rem 1rem rgba(0,0,0,.18);
-  font-size:1rem;
-}
-ul.contact-icons li.icon.brands:before{
-  font-family:"Font Awesome 5 Brands"; font-weight:400;
-}
-
-/* ----------------- Utilities & tweaks ------------------- */
-.align-center{text-align:center}
-.align-left{text-align:left}
-.align-right{text-align:right}
-
-.image{position:relative; display:block}
-.image img{display:block; width:100%; height:100%; object-fit:cover}
-
-.container{padding:2.5rem}
-
-/* Type scale inside hero */
-.panel.banner h1{font-size:3rem}
-.panel.banner p{font-size:1.05rem}
-@media (max-width:980px){
-  .panel.banner h1{font-size:2.4rem}
-}
-
-/* Make the whole strip scrollable horizontally on desktop via wheel/trackpad (keeps Ethereal vibe) */
-#wrapper{
-  overflow-x:auto; overflow-y:hidden;
-  scroll-snap-type: x mandatory;
-}
-.panel{scroll-snap-align:start}
-@media (max-width:736px){
-  #wrapper{overflow:auto}
-  .panel{min-height:24rem}
-  .panel.banner .content{padding:2rem}
-}
-
-/* ---------- Accessibility: ensure links on gradients pop --- */
-.panel a{color:#fff;border-bottom-color:rgba(255,255,255,.45)}
-.panel a:hover{color:var(--brand-3)}
-
-/* Extra polish: soft inner highlight on hero text block */
-.panel.banner .content{
-  background: linear-gradient(0deg, rgba(255,255,255,.04), rgba(255,255,255,0));
-  border-radius: var(--radius);
-}
-/* Make links pop on gradient panels (hero, etc.) */
-.panel a{
-  color:#fff;
-  border-bottom-color: rgba(255,255,255,.45);
-}
-.panel a:hover{ color:var(--brand-3); }
-
-/* Soften inner highlight on the hero text block */
-.panel.banner .content{
-  background: linear-gradient(0deg, rgba(255,255,255,.04), rgba(255,255,255,0));
-  border-radius: var(--radius);
-}
-
-/* Contact panel: brighter links + icons with better contrast */
-.panel.color4-alt .contact-icons.color1 a{
-  color:#fff !important;
-  border-bottom-color: rgba(255,255,255,.35);
-  opacity: .95;
-}
-.panel.color4-alt .contact-icons.color1 a:hover{
-  opacity: 1;
-}
-
-/* Make the round icons white with brand glyphs */
-.panel.color4-alt .contact-icons.color1 li:before{
-  background:#fff !important;
-  color: var(--brand-3) !important;
-  box-shadow: 0 8px 24px rgba(0,0,0,.18);
-}
-
-/* Even vertical spacing inside Contact column */
-.panel.color4-alt .inner .span-3-25{
-  display:flex;
-  flex-direction:column;
-  gap: 1.25rem;          /* even spacing between rows */
-}
-/* === ICONS: Circular buttons === */
-.circle-btn {
+.contact-icons a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #d16ba5, #86a8e7, #5ffbf1); /* same gradient style */
-  color: #fff;
-  font-size: 20px;
   text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.circle-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  /* the circle itself */
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
   color: #fff;
+  box-shadow:
+    inset 0 0 0 2px rgba(255,255,255,0.35),
+    0 6px 18px rgba(0,0,0,0.18);
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
 }
 
-/* === ICONS: Contact list (smaller, aligned left with labels) === */
-.contact-icons {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* the actual icon: make sure it is centered and has NO background */
+.contact-icons a i {
+  font-size: 1.25rem;
+  line-height: 1;     /* critical to avoid vertical mis-align */
+  background: none;   /* kills any inner square */
+  border: none;       /* kills any leftover borders */
+  color: inherit;
 }
 
-.contact-icons li {
-  margin: 0.75rem 0;
-  display: flex;
-  align-items: center;
+/* hover state */
+.contact-icons a:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  box-shadow:
+    inset 0 0 0 2px rgba(255,255,255,0.45),
+    0 10px 24px rgba(0,0,0,0.22);
 }
 
-.contact-icons a {
-  display: flex;
-  align-items: center;
+/* contact panel text contrast (right column) */
+.panel.color2-alt .content,
+.panel.color2 .content,
+.panel.color4-alt .content {
+  color: rgba(255,255,255,0.95);
+}
+
+.panel.color2-alt .content a,
+.panel.color2 .content a,
+.panel.color4-alt .content a {
   color: #fff;
-  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.35);
 }
 
-.contact-icons i {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  margin-right: 12px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #d16ba5, #86a8e7, #5ffbf1);
-  font-size: 16px;
+.panel.color2-alt .content a:hover,
+.panel.color2 .content a:hover,
+.panel.color4-alt .content a:hover {
+  border-bottom-color: rgba(255,255,255,0.65);
+}
+
+/* space the contact items vertically if your contact section uses a column */
+.panel .contact-icons {
+  margin-top: 1rem;
 }
