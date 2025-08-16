@@ -176,3 +176,10 @@ h2.major {
   .panel .content { order: 1; justify-self: center; }
   .hero-icons { justify-content: center; }
 }
+/* --- Pill text fix (override .panel a) --- */
+.panel a.pill {
+  color: var(--pill-fg) !important;
+  border-bottom: none !important;
+}
+.panel a.pill:hover { border-bottom: none !important; }
+.panel a.pill i { color: var(--pill-fg); }
