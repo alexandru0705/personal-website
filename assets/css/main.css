@@ -1,213 +1,168 @@
-/* ==========================================================================
-   Alex — Ethereal-style one-pager
-   Entire CSS (drop-in replacement)
-   ========================================================================== */
-
-/* ---------- Variables ---------- */
-:root{
-  --bg: #eef3f1;
-  --card-bg: #ffffff;
-  --ink: #101218;
-  --muted: rgba(255,255,255,.75);
-  --shadow: 0 20px 60px rgba(20,24,40,.18), 0 6px 20px rgba(20,24,40,.08);
-
-  /* Brand gradient (Ethereal vibe) */
-  --grad-a: #e3bfa5;
-  --grad-b: #c06a79;
-  --grad-c: #4d4b85;
-
-  /* Accents */
-  --brand: #8ea7ff;
-  --brand-2: #f7c3a6;
-
-  /* Rounding */
-  --radius: 22px;
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* ---------- Reset / base ---------- */
-*{box-sizing:border-box}
-html,body{height:100%}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-               Roboto, Ubuntu, "Helvetica Neue", Arial, "Apple Color Emoji",
-               "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  color:var(--ink);
-  background:var(--bg);
-  line-height:1.55;
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
 }
 
-/* Links inside gradient areas default to white */
-a{color:inherit;text-decoration:none}
-a:hover{opacity:.9}
-
-/* ---------- Page wrapper (card) ---------- */
-#wrapper{
-  max-width: 1200px;
-  margin: 8vh auto;
-  background: var(--card-bg);
-  border-radius: calc(var(--radius) + 6px);
-  box-shadow: var(--shadow);
-  overflow: hidden;
+/* Wrapper */
+#wrapper {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
 }
 
-/* Stack panels; each panel is a slice of the card */
-.panel{
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 56vh;
-  isolation: isolate;
+/* Panel sections */
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4em 2em;
+  min-height: 100vh;
 }
 
-/* Gradient wash used across content blocks */
-.panel .content{
-  padding: clamp(24px, 5vw, 64px);
-  background: linear-gradient(135deg, var(--grad-a) 0%, var(--grad-b) 45%, var(--grad-c) 100%);
-  color:#fff;
+.panel .content {
+  flex: 1;
+  padding: 2em;
 }
 
-/* Headings */
-h1,h2,h3,.major{
-  margin: 0 0 .6rem 0;
-  font-weight: 800;
-  letter-spacing: .2px;
+.panel .image {
+  flex: 1;
+  text-align: center;
 }
-h1,.major{font-size: clamp(34px, 4vw, 56px); line-height:1.05}
-h2{font-size: clamp(26px, 3vw, 36px)}
 
-/* Body text inside gradient */
-.panel .content p{color:var(--muted); margin: .75rem 0 0 0}
-
-/* ---------- Image side ---------- */
-.panel .image{
-  position: relative;
-  overflow: hidden;
-}
-.panel .image img{
-  width:100%;
-  height:100%;
+.panel .image img {
+  max-width: 100%;
+  max-height: 500px;
   object-fit: cover;
-  display:block;
+  border-radius: 8px;
 }
 
-/* Tinted overlay (subtle) */
-.panel .image.filtered::after,
-.panel .image.tinted::after{
-  content:"";
-  position:absolute; inset:0;
-  background:
-    linear-gradient(135deg, rgba(0,0,0,.18), rgba(0,0,0,.35)),
-    radial-gradient(1200px 800px at 90% 10%, rgba(77,75,133,.28) 0%, rgba(77,75,133,0) 60%);
-  mix-blend-mode: multiply;
-  pointer-events:none;
+/* Colors */
+.color0 { background: #ffffff; color: #333; }
+.color1 { background: #e0f7fa; color: #004d40; }
+.color2 { background: #ede7f6; color: #311b92; }
+.color3 { background: #fff3e0; color: #e65100; }
+.color4-alt { background: #263238; color: #f5f5f5; }
+
+/* Banner */
+.banner h1.major {
+  font-size: 3em;
+  margin-bottom: 0.5em;
 }
 
-/* ---------- Banner layout helpers ---------- */
-.banner.right .content{grid-column:1}
-.banner.right .image{grid-column:2}
-.spotlight.right .content{grid-column:1}
-.spotlight.right .image{grid-column:2}
-.spotlight.left .content{grid-column:2}
-.spotlight.left .image{grid-column:1}
-
-/* Slight divider between slices when needed */
-.panel + .panel{border-top: 1px solid rgba(255,255,255,.12)}
-
-/* ---------- Buttons / actions ---------- */
-.actions{list-style:none; display:flex; gap:12px; padding:0; margin:1.25rem 0 0 0}
-.actions .button{
-  display:inline-grid; place-items:center;
-  width:48px;height:48px;border-radius:999px;
-  background:#fff; color:#333; font-weight:700;
-  box-shadow: 0 6px 16px rgba(0,0,0,.12);
-  border:1px solid rgba(0,0,0,.05);
-}
-.actions .button:hover{transform: translateY(-1px);}
-
-/* ---------- Contact panel ---------- */
-#contact .inner{
-  padding: clamp(24px,5vw,56px);
-  background: linear-gradient(135deg, var(--grad-c), var(--grad-b), var(--grad-a));
-  color:#fff;
-}
-#contact h2{color:#fff; margin-bottom:1rem}
-
-.contact-list{
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:flex;
-  flex-direction:column;
-  gap: 14px;
+.banner p {
+  font-size: 1.2em;
+  margin-bottom: 1em;
 }
 
-/* Each contact row */
-.contact-list li a{
-  display:grid;
-  grid-template-columns: 44px auto;
-  align-items:center;
-  gap: 14px;
-  color:#fff;
+/* Buttons */
+.button {
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-/* Circular icon: clean circle, no inner squares */
-.contact-list .icon{
-  width:44px; height:44px; border-radius:999px;
-  display:grid; place-items:center;
-  border:2px solid rgba(255,255,255,.85);
-  background: radial-gradient(220px 220px at 30% 30%, rgba(255,255,255,.16), rgba(255,255,255,0));
-  backdrop-filter: blur(2px);
+.button.primary {
+  background: #00796b;
+  color: #fff;
 }
 
-/* The actual FA glyph */
-.contact-list .icon i{
-  font-size:18px;
-  line-height:1;
-  color:#fff;
-  background:none;     /* <- ensures no square background */
-  border:0;           /* <- ensures no square border */
-  display:inline-block;
+.button.primary:hover {
+  background: #004d40;
 }
 
-/* The label on the right */
-.contact-list .label{
-  border-bottom: 1px solid rgba(255,255,255,.35);
-  padding-bottom: 6px;
-  display:inline-block;
+/* Spotlight sections */
+.spotlight {
+  flex-direction: row;
 }
 
-/* Make sure all FA “brand” icons use the correct weight */
-.fab, .fas{font-weight: 900}
-
-/* ---------- Accessibility: links visible on gradients ---------- */
-.panel a{ color:#fff; border-bottom-color: rgba(255,255,255,.45) }
-.panel a:hover{ color:#fff }
-
-/* ---------- Card edge glow (soft) ---------- */
-#wrapper::after{
-  content:""; position:absolute; inset:auto;
-}
-#wrapper{ position:relative }
-#wrapper::before{
-  content:"";
-  position:absolute; left:0; right:0; bottom:-24px; height:80px;
-  filter: blur(24px); opacity:.55; pointer-events:none;
-  background: radial-gradient(60% 100% at 50% 0%, rgba(0,0,0,.18), rgba(0,0,0,0) 70%);
+.spotlight.left .image {
+  order: -1;
 }
 
-/* ---------- Responsiveness ---------- */
-@media (max-width: 980px){
-  .panel{ grid-template-columns: 1fr; min-height: auto }
-  .panel .image{ height: 38vh }
-}
-@media (max-width: 736px){
-  #wrapper{ margin: 4vh auto }
-  .actions .button{ width:44px;height:44px }
-  .contact-list .icon{ width:40px;height:40px }
+.spotlight.right .image {
+  order: 1;
 }
 
-/* ---------- Small utility (optional) ---------- */
-.align-center{text-align:center}
-.align-right{text-align:right}
+.spotlight h2.major {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.spotlight p {
+  font-size: 1.1em;
+  max-width: 600px;
+}
+
+/* Contact footer */
+.panel.color4-alt {
+  flex-direction: column;
+  text-align: center;
+}
+
+.contact-icons {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 0;
+  margin-top: 2em;
+}
+
+.contact-icons li a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 1.1em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  transition: 0.3s;
+}
+
+.contact-icons li a:hover {
+  color: #ffcc80;
+}
+
+/* Icons round */
+.contact-icons .icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #455a64;
+  font-size: 1.5em;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .panel {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .panel .content {
+    padding: 1em;
+  }
+
+  .panel .image img {
+    max-height: 300px;
+  }
+
+  .contact-icons {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+}
