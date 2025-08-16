@@ -135,3 +135,50 @@ p{ color: var(--muted); margin: 0 0 1rem 0; }
   .panel.left .media { order: 2; }
   .panel.left .content { order: 1; }
 }
+/* === Light / Ethereal Override === */
+
+/* Softer, airy palette */
+:root{
+  --bg: #f6f7fb;
+  --panel: rgba(255,255,255,0.92);
+  --text: #2e2b37;
+  --muted: rgba(46,43,55,.72);
+  --accent: #d59f2f;   /* warm light gold */
+  --accent-2: #8b78b2; /* soft violet */
+}
+
+/* Gentle light background */
+body{
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 20% -10%, #ffffff 0%, #f6f7fb 60%, #eef2f7 100%);
+}
+
+/* Panels: translucent white, soft shadow */
+.panel{
+  background: var(--panel);
+  box-shadow: 0 10px 28px rgba(0,0,0,.08), inset 0 0 0 1px rgba(0,0,0,.04);
+}
+
+/* Banner: faint color wash */
+.panel.banner{
+  background: linear-gradient(135deg,
+    rgba(255,255,255,0.95) 0%,
+    rgba(245,240,255,0.88) 45%,
+    rgba(255,250,235,0.88) 100%
+  );
+  backdrop-filter: blur(0px);
+}
+
+/* Spotlight: almost-white, no heavy tint */
+.panel.spotlight{
+  background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.9));
+}
+
+/* Headings underline: lighter accent */
+.major::after{
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  opacity: .7;
+}
+
+/* Remove stray bullets on action buttons */
+.actions{ list-style: none; padding-left: 0; }
