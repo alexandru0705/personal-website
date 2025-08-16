@@ -54,31 +54,83 @@ table {
 	border-spacing: 0;
 }
 
-/* Base styling */
 body {
 	-webkit-text-size-adjust: none;
 }
 
-*, *:before, *:after {
+mark {
+	background-color: transparent;
+	color: inherit;
+}
+
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+input, select, textarea {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+}
+
+/* Basic */
+
+@-ms-viewport {
+	width: device-width;
+}
+
+body {
+	-ms-overflow-style: scrollbar;
+}
+
+@media screen and (max-width: 480px) {
+
+	html, body {
+		min-width: 320px;
+	}
+
+}
+
+html {
 	box-sizing: border-box;
 }
 
-/* Typography */
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	background: #ffffff;
+}
+
 body, input, select, textarea {
+	color: #666;
 	font-family: "Source Sans Pro", Helvetica, sans-serif;
+	font-size: 17pt;
 	font-weight: 300;
-	font-size: 16pt;
 	line-height: 1.65;
-	color: #444;
 }
 
 a {
+	-moz-transition: color 0.2s ease, border-color 0.2s ease;
+	-webkit-transition: color 0.2s ease, border-color 0.2s ease;
+	-ms-transition: color 0.2s ease, border-color 0.2s ease;
+	transition: color 0.2s ease, border-color 0.2s ease;
+	border-bottom: dotted 1px;
 	color: inherit;
-	text-decoration: underline;
+	text-decoration: none;
+}
+
+a:hover {
+	border-bottom-color: transparent;
+	color: #f16578;
 }
 
 strong, b {
-	font-weight: 400;
+	color: #555;
+	font-weight: 600;
 }
 
 em, i {
@@ -90,28 +142,21 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 300;
+	color: #555;
+	font-weight: 600;
 	line-height: 1.5;
 	margin: 0 0 1em 0;
 }
 
 h1.major, h2.major, h3.major, h4.major, h5.major, h6.major {
-	margin: 0 0 1em 0;
-	position: relative;
-}
-
-h1.major:after, h2.major:after, h3.major:after, h4.major:after, h5.major:after, h6.major:after {
-	background-color: #e0e0e0;
-	content: '';
-	display: block;
-	height: 1px;
-	margin: 0.5em 0 0 0;
-	width: 100%;
+	border-bottom: solid 1px #ddd;
+	margin: 0 0 1.5em 0;
+	padding: 0 0 0.5em 0;
+	width: max-content;
 }
 
 h1 {
 	font-size: 2.5em;
-	line-height: 1.2;
 }
 
 h2 {
@@ -123,7 +168,7 @@ h3 {
 }
 
 h4 {
-	font-size: 1.1em;
+	font-size: 1em;
 }
 
 h5 {
@@ -134,44 +179,103 @@ h6 {
 	font-size: 0.7em;
 }
 
-/* Panel styling */
-.panel {
-	padding: 4em 2em 2em 2em;
-	background: #fff;
+sub {
+	font-size: 0.8em;
+	position: relative;
+	top: 0.5em;
 }
 
-.panel.banner {
-	padding: 6em 2em 4em 2em;
+sup {
+	font-size: 0.8em;
+	position: relative;
+	top: -0.5em;
 }
 
-.panel .content {
-	max-width: 800px;
-	margin: 0 auto;
-}
-
-.panel .image {
-	border-radius: 0.25em;
-	overflow: hidden;
-}
-
-.panel .image img {
-	display: block;
-	width: 100%;
-}
-
-/* Buttons */
-.button {
-	display: inline-block;
-	border-radius: 2em;
+hr {
 	border: 0;
-	padding: 0.75em 2em;
-	background: #444;
-	color: #fff;
-	cursor: pointer;
-	text-decoration: none;
+	border-bottom: solid 1px #ddd;
+	margin: 2em 0;
+}
+
+hr.major {
+	margin: 3em 0;
+}
+
+blockquote {
+	border-left: solid 4px #ddd;
+	font-style: italic;
+	margin: 0 0 2em 0;
+	padding: 0.5em 0 0.5em 2em;
+}
+
+code {
+	background: rgba(144, 144, 144, 0.075);
+	border-radius: 4px;
+	border: solid 1px #ddd;
+	font-family: "Courier New", monospace;
 	font-size: 0.9em;
-	font-weight: 400;
-	transition: background-color 0.2s ease-in-out;
+	margin: 0 0.25em;
+	padding: 0.25em 0.65em;
+}
+
+pre {
+	-webkit-overflow-scrolling: touch;
+	font-family: "Courier New", monospace;
+	font-size: 0.9em;
+	margin: 0 0 2em 0;
+}
+
+pre code {
+	display: block;
+	line-height: 1.75;
+	padding: 1em 1.5em;
+	overflow-x: auto;
+}
+
+.align-left {
+	text-align: left;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.align-right {
+	text-align: right;
+}
+
+/* Button */
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	-moz-transition: background-color 0.2s ease, color 0.2s ease;
+	-webkit-transition: background-color 0.2s ease, color 0.2s ease;
+	-ms-transition: background-color 0.2s ease, color 0.2s ease;
+	transition: background-color 0.2s ease, color 0.2s ease;
+	background-color: transparent;
+	border-radius: 4px;
+	border: 0;
+	box-shadow: inset 0 0 0 1px #ddd;
+	color: #555;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 0.9em;
+	font-weight: 600;
+	height: 2.75em;
+	letter-spacing: 0.125em;
+	line-height: 2.75em;
+	padding: 0 1.5em;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
 }
 
 .button:hover {
@@ -180,6 +284,7 @@ h6 {
 
 .button.primary {
 	background: #e44c65;
+	color: #fff !important;
 }
 
 .button.primary:hover {
@@ -187,6 +292,7 @@ h6 {
 }
 
 /* Utilities */
-span-3-75 { width: 75%; }
-span-1-75 { width: 25%; }
-span-5 { width: 100%; }
+
+.span-3-75 { width: 75%; }
+.span-1-75 { width: 25%; }
+.span-5 { width: 100%; }
