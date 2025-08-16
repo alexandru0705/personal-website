@@ -1,25 +1,137 @@
-/* Two-column layout for Painting section */
-.panel.spotlight.large .two-column {
-  display: flex;
-  flex-wrap: wrap;
+/* ---- Reset (tiny) ---- */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ---- Base ---- */
+:root{
+  --bg: #0f1115;
+  --panel: #171a21;
+  --text: rgba(255,255,255,.85);
+  --muted: rgba(255,255,255,.65);
+  --accent: #ffe4b4;
+  --accent-2: #726193;
+  --radius: 14px;
+  --gap: 2rem;
+}
+body{
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 20% -10%, #22283a 0%, #101217 60%, #0b0c10 100%);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+.page{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* ---- Panels (shared) ---- */
+.panel{
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: clamp(18px, 3vw, 40px);
+  margin: clamp(14px, 2vw, 26px) 0;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: var(--gap);
   align-items: center;
-  gap: 2rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.06);
 }
 
-.panel.spotlight.large .two-column .column {
-  flex: 1;
+/* left/right order presets */
+.panel.left .content { order: 1; }
+.panel.left  .media   { order: 2; }
+.panel.right .content { order: 1; }
+.panel.right .media   { order: 2; }
+
+/* Banner = bigger text */
+.panel.banner{
+  background: linear-gradient(135deg, rgba(114,97,147,.18), rgba(227,123,124,.18), rgba(255,228,180,.18));
+  backdrop-filter: blur(2px);
 }
 
-.panel.spotlight.large .two-column .image-col img {
+/* Spotlight = subtle tint */
+.panel.spotlight{
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+}
+
+/* Footer */
+.panel.footer{
+  grid-template-columns: 1fr;
+}
+
+/* Content & Media blocks */
+.content{
+  min-width: 0;
+}
+.media{
+  min-width: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.06);
+}
+.media img{
   width: 100%;
   height: auto;
-  border-radius: 12px;
   display: block;
 }
 
-.panel.spotlight.large .two-column .text-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+/* Headings & text */
+h1,h2{
+  margin: 0 0 .6rem 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
-.image.fit img { border-radius: 12px; }
+h1{ font-size: clamp(28px, 4vw, 44px); }
+h2{ font-size: clamp(22px, 2.6vw, 30px); }
+p{ color: var(--muted); margin: 0 0 1rem 0; }
+
+/* Buttons */
+.actions{
+  display: flex; flex-wrap: wrap; gap: .6rem;
+  margin-top: .6rem;
+}
+.button{
+  background: white; color: #111;
+  padding: .65rem 1rem;
+  border-radius: 999px;
+  font-weight: 600; text-decoration: none;
+  border: 0; display: inline-block;
+}
+.button.alt{
+  background: transparent; color: var(--accent);
+  outline: 1px solid rgba(255,255,255,.2);
+}
+.button:hover{ transform: translateY(-1px); }
+
+/* Contact list */
+.contact{
+  list-style: none; padding: 0; margin: .4rem 0 0 0;
+  display: grid; gap: .35rem;
+}
+.contact a{ color: var(--accent); text-decoration: none; }
+.contact a:hover{ text-decoration: underline; }
+
+/* Major underline */
+.major{
+  position: relative; padding-bottom: .4rem;
+}
+.major::after{
+  content:""; position:absolute; left:0; bottom:0;
+  width: 60px; height: 3px; border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  opacity:.9;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 980px){
+  .panel{
+    grid-template-columns: 1fr;
+  }
+  .panel.right .media { order: 2; }
+  .panel.right .content { order: 1; }
+  .panel.left .media { order: 2; }
+  .panel.left .content { order: 1; }
+}
