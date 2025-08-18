@@ -133,11 +133,12 @@ h2.major {
 /* Generic button */
 .button {
   display: inline-block;
-  background: #ffffff;
-  color: #1b2230;
+  background: #4CAF50;
+  color: #fff;
   font-weight: 700;
+  font-size: 1em;
   padding: 0.7rem 1.05rem;
-  border-radius: 12px;
+  border-radius: 8px;
   text-decoration: none;
   box-shadow: 0 8px 18px rgba(10, 18, 28, 0.25);
 }
