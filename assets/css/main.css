@@ -142,6 +142,17 @@ h2.major {
   text-decoration: none;
   box-shadow: 0 8px 18px rgba(10, 18, 28, 0.25);
 }
+.support-link {
+  font-size: 1.3rem;   /* makes text bigger */
+  font-weight: 700;    /* bold */
+  color: #ffffff;      /* white text */
+  text-decoration: underline; /* emphasised look */
+  display: inline-block;
+  margin-top: 1rem;
+}
+.support-link:hover {
+  color: #4CAF50;      /* green highlight on hover */
+}
 .button:hover { transform: translateY(-1px); }
 
 /* Contact list */
