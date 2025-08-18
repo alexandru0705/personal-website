@@ -133,8 +133,8 @@ h2.major {
 /* Generic button */
 .button {
   display: inline-block;
-  background: #4CAF50 !important;
-  color: #fff !important;
+  background: #fff !important;
+  color: #4CAF50 !important;
   font-weight: 700;
   font-size: 1em;
   padding: 0.7rem 1.05rem;
