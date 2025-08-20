@@ -257,3 +257,17 @@ h2.major {
     border-radius: 12px;
   }
 }
+
+/* === HERO IMAGE ALIGNMENT FIX === */
+@media (min-width: 1024px) {
+  .panel.banner.hero.color1-alt .image {
+    display: flex;
+    justify-content: center; /* centers the image horizontally */
+  }
+
+  .panel.banner.hero.color1-alt .image img {
+    max-width: 480px;   /* adjust bigger but keep proportion */
+    width: 100%;
+    height: auto;
+  }
+}
