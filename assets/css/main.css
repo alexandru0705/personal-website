@@ -272,12 +272,15 @@ h2.major {
   }
 }
 
-@media (min-width: 769px) {
-  .panel.banner.hero.color1-alt p {
-    margin: 1.5rem 0 2rem; /* more space below paragraph */
+@media (min-width: 1024px) {
+  .panel.banner.hero.color1-alt .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* spread content vertically */
+    height: 100%; /* allow it to fill the hero block */
   }
 
   .panel.banner.hero.color1-alt .actions.hero-icons {
-    gap: 1.25rem; /* spread buttons a bit more */
+    margin-top: auto; /* pushes buttons down */
   }
 }
