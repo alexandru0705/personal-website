@@ -200,3 +200,42 @@ h2.major {
 .panel a.pill:hover { border-bottom: none !important; }
 .panel a.pill i { color: var(--pill-fg); }
 .hero-icons .pill span { display: inline; white-space: nowrap; }
+/* === HERO RESPONSIVE FIX === */
+.panel.banner.hero.color1-alt .image img {
+  width: 100%;
+  height: auto;
+  max-width: 320px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.panel.banner.hero.color1-alt h1 {
+  font-size: clamp(22px, 5vw, 36px);
+  line-height: 1.2;
+}
+
+.panel.banner.hero.color1-alt p {
+  font-size: clamp(14px, 3vw, 18px);
+  line-height: 1.6;
+  margin: 0.5rem 0 1rem;
+}
+
+.panel.banner.hero.color1-alt .actions.hero-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.panel.banner.hero.color1-alt .pill {
+  font-size: clamp(12px, 2.5vw, 16px);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+}
+
+@media (max-width: 768px) {
+  .panel.banner.hero.color1-alt {
+    padding: 2rem 1rem;
+  }
+}
