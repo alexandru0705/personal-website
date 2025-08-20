@@ -202,13 +202,13 @@ h2.major {
 .hero-icons .pill span { display: inline; white-space: nowrap; }
 /* === HERO RESPONSIVE FIX === */
 .panel.banner.hero.color1-alt .image img {
-  width: 100%;
-  height: auto;
-  max-width: 500px;
-  margin: 0 auto;
-  display: block;
-  border-radius: 12px;
-}
+    width: 100%;
+    height: auto !important;   /* don't force height */
+    max-width: 280px;          /* cap width only */
+    max-height: none !important;
+    object-fit: contain !important;  /* no cropping */
+    border-radius: 12px;
+  }
 
 .panel.banner.hero.color1-alt h1 {
   font-size: clamp(22px, 5vw, 36px);
@@ -239,5 +239,21 @@ h2.major {
     max-width: 280px;
     max-height: 220px;
     object-fit: cover;
+  }
+}
+
+/* HERO image — keep full proportions on phones */
+@media (max-width: 768px) {
+  .panel.banner.hero.color1-alt .image {
+    display: flex;
+    justify-content: center;
+  }
+  .panel.banner.hero.color1-alt .image img {
+    width: 100%;
+    height: auto !important;   /* don't force height */
+    max-width: 280px;          /* cap width only */
+    max-height: none !important;
+    object-fit: contain !important;  /* no cropping */
+    border-radius: 12px;
   }
 }
