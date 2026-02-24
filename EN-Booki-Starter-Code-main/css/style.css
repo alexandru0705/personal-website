@@ -408,7 +408,7 @@ header {
     border-radius: 20px 20px 0 0;
 }
 
-.activities-cards a  {
+.activities-cards a {
     text-decoration: none;
 }
 
@@ -419,7 +419,7 @@ header {
 }
 
 .card-title {
-    margin:0;
+    margin: 0;
 }
 
 /****** Footer Section ***********/
@@ -442,4 +442,221 @@ footer {
 .footer-content a {
     text-decoration: none;
     color: rgb(0, 0, 0)
+}
+
+/******* Version Résponsive *******/
+
+@media (max-width: 1024px) {
+    .filtres {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filtres-list a {
+        flex: 0 1 45%;
+        max-width: 150px;
+        justify-content: space-between;
+    }
+
+    .accommodation-and-popular {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .accommodation {
+        width: 100%;
+    }
+
+    .popular {
+        width: 100%;
+        margin-top: 33px;
+    }
+
+    .popular-cards {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+    }
+
+    .popular-cards .card {
+        flex: 1;
+    }
+
+    .activity-card img {
+        object-fit: cover;
+        height: 200px;
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .activity-card {
+        height: 270px;
+    }
+
+    .activity-card h3 {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .activity-card .card-title {
+        display: flex;
+        align-items: flex-start;
+        padding: 8px 16px;
+    }
+
+    footer {
+        width: 100%;
+    }
+}
+
+/***** Version Mobile *****/
+
+@media (max-width: 768px) {
+    .nav-header {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        width: 50%;
+    }
+
+    .search-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 20px;
+        gap: 20px;
+    }
+
+    .search-bar {
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .search-btn {
+        background-color: transparent;
+        width: 55px;
+    }
+
+    .search-icon {
+        display: block;
+        font-size: 18px;
+        color: white;
+        padding-right: 10px;
+
+    }
+
+    .icon-box {
+        width: 50px;
+    }
+
+    .search-btn {
+        background-color: var(--main-color);
+        color: white;
+        border-radius: 15px;
+        width: 50px;
+        height: 50px;
+        margin-left: -10px;
+        box-shadow: 0px 4px 4px 0px #00000040;
+
+    }
+
+    .btn-text {
+        display: none;
+    }
+
+    input {
+        width: 85%;
+    }
+
+    .filtres {
+        height: auto;
+    }
+
+    .filtres-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .filtres-list li {
+        width: calc(50% - 4px);
+    }
+
+    .filtres-list a {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+    }
+
+    .info {
+        align-items: baseline;
+    }
+
+    .accommodation-cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 33px;
+    }
+
+    .accommodation-cards .card {
+        width: 100%;
+    }
+
+    .accommodation-and-popular {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .popular-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .accommodation-and-popular .popular {
+        border-radius: 0;
+    }
+
+    .accommodation-and-popular .accommodation {
+        background-color: white;
+    }
+
+    .activities-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .activity-card .card-title {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        padding: 8px 16px;
+    }
+
+    footer {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
