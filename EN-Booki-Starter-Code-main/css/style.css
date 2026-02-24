@@ -198,7 +198,7 @@ header {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 33px;
+    margin-bottom: 16px;
 }
 
 .info p {
@@ -279,6 +279,11 @@ header {
     margin-top: 33px;
 }
 
+.card a {
+    text-decoration: none;
+    color: black;
+}
+
 .accommodation-cards .card img {
     display: flex;
     justify-content: center;
@@ -312,6 +317,7 @@ header {
     text-decoration: none;
     font-size: 18px;
     font-weight: 700;
+    color: black;
 }
 
 /****** Popular ***********/
@@ -323,11 +329,17 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 33px;
 }
 
-.popular-cards .card {
+.popular-cards {
     display: flex;
-    margin-top: 33px;
+    flex-direction: column;
+    gap: 33px;
+}
+
+.popular-cards .card a {
+    display: flex;
 }
 
 .popular-cards img {
@@ -396,6 +408,38 @@ header {
     border-radius: 20px 20px 0 0;
 }
 
-.activities-cards a .card-title  {
+.activities-cards a  {
     text-decoration: none;
+}
+
+.activity-card h3 {
+    text-decoration: none;
+    color: black;
+    padding: 8px 0 0 16px;
+}
+
+.card-title {
+    margin:0;
+}
+
+/****** Footer Section ***********/
+
+footer {
+    margin-top: 30px;
+}
+
+.footer {
+    background-color: rgb(230, 230, 230);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px 10px;
+}
+
+.footer-content {
+    flex: 1;
+}
+
+.footer-content a {
+    text-decoration: none;
+    color: rgb(0, 0, 0)
 }
