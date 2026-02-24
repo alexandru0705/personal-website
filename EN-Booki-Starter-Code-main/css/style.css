@@ -518,8 +518,32 @@ footer {
         justify-content: center;
     }
 
-    .nav-links a {
-        width: 50%;
+    .navbar,
+    .nav-links {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-links li {
+        flex: 1;
+        text-align: center;
+        border-bottom: 2px solid var(--main-bg-color);
+        padding-bottom: 15px;
+        cursor: pointer;
+    }
+
+    .nav-links li:hover {
+        border-bottom: 2px solid var(--main-color);
+    }
+
+    .nav-links a:hover {
+        border-top: none;
+    }
+
+    .nav-links li a {
+        display: block;
+        width: 100%;
     }
 
     .search-section {
@@ -574,6 +598,10 @@ footer {
 
     .filtres {
         height: auto;
+    }
+
+    .filtres ul {
+        width: 100%;
     }
 
     .filtres-list {
