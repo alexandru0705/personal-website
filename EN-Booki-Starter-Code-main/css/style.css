@@ -124,9 +124,14 @@ header {
     display: block;
 }
 
+.search-bar input::placeholder {
+    color: black;
+    font-size: 16px;
+    opacity: 1;
+}
+
 .search-bar input {
     text-align: center;
-    font-size: 18px black;
     font-weight: 700;
     border: #a0a0a0 0.5px solid;
 }
@@ -452,10 +457,19 @@ footer {
         align-items: flex-start;
     }
 
+    .filtres-list {
+        padding-left: 0;
+        margin-bottom: 16px;
+    }
+
     .filtres-list a {
         flex: 0 1 45%;
         max-width: 150px;
         justify-content: space-between;
+    }
+
+    .info {
+        margin-top: 20px;
     }
 
     .accommodation-and-popular {
